@@ -29,6 +29,10 @@
 #include "allegro.h"
 #else
 #include "o2em_sdl.h"
+/* horrible hack to compile this file when allegro is not present 
+ * Need to made part of tis file allegro only */
+#define KEY_CAPSLOCK 0
+#define KB_SCROLOCK_FLAG 0
 #endif
 #include "score.h"
 
