@@ -535,7 +535,10 @@ Byte in_bus()
 				d = keyjoy(jn);
 				break;
 			case 2:
-				/*poll_joystick(); ALLEG*/
+				#ifndef __O2EM_SDL__
+				/* TODO for SDL */
+				poll_joystick();
+				#endif
 				if (joy[sticknum].stick[0].axis[1].d1) d &= 0xFE;			/* joy_up*/
 				if (joy[sticknum].stick[0].axis[0].d2) d &= 0xFD;			/* joy_right*/
 				if (joy[sticknum].stick[0].axis[1].d2) d &= 0xFB;			/* joy_down*/
